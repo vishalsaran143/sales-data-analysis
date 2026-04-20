@@ -1,105 +1,111 @@
-# 📊 Sales Analysis (2015–2018)
-
-## 📌 Problem Statement
-
-The objective of this project is to analyze sales data to identify growth trends, top-performing regions, and key product categories driving business performance.
+# 📊 Sales Analysis Project (2015–2018)
 
 ---
 
-## 📂 Dataset Information
+## 📌 What is This Project About?
 
-* The dataset contains sales data from **2015 to 2018**
-* Includes information about orders, products, and regions
-* Key columns used in analysis:
-
-  * Order Date
-  * Region
-  * Category
-  * Sub-Category
-  * Sales
-
-👉 Exploratory data analysis and feature engineering were performed to prepare the data for analysis.
+This project analyzes sales data from 2015 to 2018 to answer 3 simple questions:
+- Which year had the best sales?
+- Which region and product makes the most money?
+- Where should the business focus next?
 
 ---
 
-## 📌 Scope of Analysis
+## 📂 About the Dataset
 
-* Although the dataset spans from **2015 to 2018**, the analysis mainly focuses on **2016 to 2018**
-* **2015 is treated as a baseline year**
+- Sales data from **2015 to 2018**
+- Contains order, product, and region information
+- Main columns used: `Order Date`, `Region`, `Category`, `Sub-Category`, `Sales`
 
-👉 This helps in making meaningful year-over-year comparisons.
-
----
-
-## 📈 Overall Trend
-
-* Sales show a consistent increase from 2016 to 2018
-* 2018 is the highest-performing year
-
-👉 **Insight:** The business is experiencing steady growth over time
+> **Note:** Data was cleaned and prepared before analysis.
 
 ---
 
-## 🌍 Region Analysis
+## 🔎 What Was Analyzed?
 
-* Sales vary across different regions
-* The **West region** contributes the highest overall sales
-
-👉 **Conclusion:** West region is the primary revenue driver
-
----
-
-## 🏆 Category Analysis (West Region)
-
-* **Technology** is the top-performing category
-* Other categories show moderate performance
-
-👉 **Insight:** Technology is the main contributor to overall revenue
+- Focus is on **2016 to 2018**
+- **2015 is used as the starting baseline** for comparison
+- Year-over-year growth, region performance, and product trends were studied
 
 ---
 
-## 🔍 Sub-Category Analysis
+## 📈 Key Findings
 
-* Sub-categories like **Phones and Copiers** generate the highest sales
-* Some sub-categories contribute less to total revenue
-
-👉 **Insight:** A small number of sub-categories drive most of the sales
+### 1. Overall Sales Trend
+- Sales dropped slightly in 2016 (-4.26%) but recovered strongly
+- **2017: +30.64% growth**
+- **2018: +20.30% growth** — best year overall
+- Total growth from 2016 to 2018: **+57%**
 
 ---
 
-## 📊 Growth Analysis (2016 vs 2018)
+### 2. Region Performance
+- **West region has the highest and most consistent growth** (35%+ every year)
+- East region is large but growing slowly
+- Central region grew fast in 2017 but declined in 2018 ⚠️
+- South region is small but steady
 
-* Technology category shows the highest growth
-* Growth is not evenly distributed across all categories
+> ✅ West region was selected for deeper analysis
 
-👉 **Insight:** Business growth is driven by specific high-performing categories
+---
+
+### 3. Category Performance (West Region)
+- **Technology** nearly doubled in 2 years — top category
+- **Office Supplies** also grew strongly, especially in 2018
+- **Furniture** started strong but went negative in 2018 ❌
+
+---
+
+### 4. Sub-Category Performance (West Region)
+- **Copiers** — grew 4x in 2 years 🚀 — biggest growth product
+- **Binders** — consistent growth both years ✅
+- **Storage** — recovered well in 2018 ✅
+- **Phones** — was the top product, now declining ⚠️
+- **Supplies** — actively pulling growth down ❌
+
+---
+
+### 5. Growth Contribution (80/20 Rule)
+- Just **3 sub-categories (Copiers, Binders, Storage)** are driving **73% of total growth**
+- This shows growth is concentrated — not spread evenly
 
 ---
 
 ## 💡 Business Recommendations
 
-* Focus on high-performing categories like Technology
-* Strengthen top sub-categories such as Phones and Copiers
-* Improve performance in low-performing areas
+| Priority | Action |
+|----------|--------|
+| ✅ Do More | Invest in Copiers, Binders, Storage |
+| ✅ Do More | Push Technology category in West region |
+| ✅ Do More | Apply West region strategy to South region |
+| ⚠️ Fix This | Phones declining — try enterprise/bulk sales |
+| ⚠️ Fix This | Supplies hurting growth — check pricing/competition |
+| ❌ Investigate | Central region declined in 2018 — find out why |
 
 ---
 
 ## 🛠️ Tools Used
 
-* SQL (MySQL)
-* Power BI
+- **SQL (MySQL)** — data extraction and analysis
+- **Power BI** — dashboards and visualizations
 
 ---
 
 ## 📂 Project Structure
 
-* `sql/` → SQL queries
-* `data/` → dataset
-* `dashboard/` → Power BI file
-* `images/` → charts/screenshots
+```
+📁 sql/          → All SQL queries
+📁 data/         → Raw dataset
+📁 dashboard/    → Power BI file
+📁 images/       → Charts and screenshots
+```
 
 ---
 
 ## 🚀 Conclusion
 
-The analysis highlights that sales growth is driven by key regions and product categories. Focusing on these areas can significantly improve overall business performance.
+> Business grew **57% in just 2 years** — from ₹4.6L to ₹7.2L
+>
+> Growth is mainly driven by **West region**, **Technology category**, and **Copiers**
+>
+> Fixing declining products (Phones, Supplies) and regions (Central) can push growth even higher
