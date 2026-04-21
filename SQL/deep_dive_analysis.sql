@@ -12,7 +12,7 @@
 --           Sales team spends 17x more effort on Binders for less return
 
 SELECT 
-    Sub_Category,
+    `Sub-Category`,
     COUNT(DISTINCT `Order ID`) AS Total_Orders,
     ROUND(SUM(Sales), 2) AS Total_Sales,
     ROUND(SUM(Sales) / COUNT(DISTINCT `Order ID`), 2) AS Revenue_Per_Order,
@@ -21,9 +21,9 @@ SELECT
         WHEN SUM(Sales) / COUNT(DISTINCT `Order ID`) >= 220 THEN 'Medium Efficiency'
         ELSE 'Low Efficiency'
     END AS Efficiency_Tag
-FROM superstore
+FROM sales
 WHERE Region = 'West'
-GROUP BY Sub_Category
+GROUP BY `Sub-Category`
 ORDER BY Revenue_Per_Order DESC;
 
 -- BUSINESS INSIGHT:
@@ -41,12 +41,12 @@ ORDER BY Revenue_Per_Order DESC;
 
 SELECT 
     Year,
-    Sub_Category,
+    `Sub-Category`,
     ROUND(SUM(Sales), 2) AS Total_Sales
-FROM superstore
+FROM sales
 WHERE Region = 'Central'
-GROUP BY Year, Sub_Category
-ORDER BY Sub_Category, Year;
+GROUP BY Year, `Sub-Category`
+ORDER BY `Sub-Category`, Year;
 
 -- BUSINESS INSIGHT:
 -- Copiers in Central: 2017 → ₹17,499 | 2018 → ₹3,679 (-79% drop)
@@ -66,8 +66,8 @@ SELECT
     Year,
     Region,
     ROUND(SUM(Sales), 2) AS Total_Sales
-FROM superstore
-WHERE Sub_Category = 'Phones'
+FROM sales
+WHERE `Sub-Category` = 'Phones'
 GROUP BY Year, Region
 ORDER BY Region, Year;
 
@@ -76,3 +76,33 @@ ORDER BY Region, Year;
 -- Phones in East:  2015 → ₹20,523 | 2018 → ₹35,952 (+69% growth)
 -- Phones is NOT a dying product — West region strategy for Phones is failing
 -- Recommendation: Study East region Phones strategy and replicate in West
+
+
+
+
+-- -----------------------------------------------
+-- 4. Season Analysis — Konse season mein kya bikta hai?
+-- -----------------------------------------------
+-- WHAT we found: Copiers sabse efficient product hai
+-- WHY it matters: Kya Copiers har season consistent hai ya seasonal hai?
+-- FINDING: Copiers Spring mein ₹3,053 per order — Fall mein sirf ₹1,049 per order
+
+SELECT 
+    season,
+    `Sub-Category`,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    COUNT(DISTINCT `Order ID`) AS Total_Orders,
+    ROUND(SUM(Sales) / COUNT(DISTINCT `Order ID`), 2) AS Revenue_Per_Order
+FROM sales
+WHERE Region = 'West'
+    AND `Sub-Category` IN ('Copiers', 'Phones', 'Binders')
+GROUP BY season, `Sub-Category`
+ORDER BY `Sub-Category`, Revenue_Per_Order DESC;
+
+-- BUSINESS INSIGHT:
+-- Copiers Spring: ₹3,053 per order — PEAK performance
+-- Copiers Fall:   ₹1,049 per order — 3x less than Spring
+-- Copiers is NOT just an efficient product — it is a Spring-driven product
+-- Strategy: Double down on Copiers in Spring
+--           Targeted push in Fall — demand exists but untapped
+-- Warning: Do NOT judge Copiers performance by Fall numbers alone
