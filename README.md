@@ -107,6 +107,11 @@ This project follows a structured top-down approach:
 | ⚠️ Fix This | Fix Phones strategy in West | Product is fine — East grew 69% |
 | ❌ Review | Binders, Fasteners, Art | Low efficiency — high effort, low return |
 ---
+
+## 📊 Dashboard
+
+- 📄 [View Dashboard PDF](Dashboard/Sales%20Analysis.pdf)
+--- 
 ## 🛠️ Tools Used
 - **SQL (MySQL)** — data extraction and analysis
 - **Power BI** — dashboards and visualizations
