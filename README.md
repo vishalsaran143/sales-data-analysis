@@ -9,7 +9,7 @@ This project analyzes sales data from 2015 to 2018 to answer 3 questions:
 ## 📂 About the Dataset
 - Sales data from **2015 to 2018**
 - Contains order, product, and region information
-- Main columns used: `Order Date`, `Region`, `Category`, `Sub-Category`, `Sales`
+- Main columns used: `Order Date`, `Region`, `Category`, `Sub-Category`, `Sales`, `Season`
 > **Note:** Data was cleaned and prepared before analysis.
 ---
 ## 🔎 Analysis Approach
@@ -84,10 +84,23 @@ This project follows a structured top-down approach:
 > **Insight:** Phones is declining ONLY in West region while growing in all other regions. This is not a product problem — it is a West region sales strategy failure for Phones. Study what East region is doing differently and replicate it.
 
 ---
+### WHY 4 — Copiers is Spring-driven — Fall is untapped opportunity
+| Season | Revenue Per Order |
+|---|---|
+| **Spring** | ₹3,053 🔥 |
+| Summer | ₹1,371 |
+| Winter | ₹1,039 |
+| **Fall** | ₹1,049 ❌ |
+
+> **Insight:** Copiers is not just efficient — it is heavily Spring-dependent. Spring delivers 3x more revenue per order than Fall. This is not a product weakness — it is an untapped seasonal opportunity. A targeted Copiers push in Fall could unlock significant additional revenue without adding new products.
+
+---
 ## 💡 Business Recommendations
 | Priority | Action | Why |
 |---|---|---|
-| ✅ Do More | Invest in Copiers | ₹2,020 revenue per order — highest efficiency |
+| ✅ Do More | Double down on Copiers in Spring | ₹3,053 per order — peak performance |
+| ✅ Do More | Targeted Copiers push in Fall | 3x gap vs Spring — untapped revenue |
+| ✅ Do More | Invest in Copiers over Binders | 14x better revenue per order |
 | ✅ Do More | Push Technology in West | Nearly doubled in 2 years |
 | ✅ Do More | Apply West strategy to South | South steady but underperforming |
 | ⚠️ Fix This | Investigate Copiers in Central | 79% crash — regional execution issue |
@@ -113,6 +126,10 @@ This project follows a structured top-down approach:
 >
 > Growth is driven by **West region**, **Technology category**, and **Copiers**
 >
-> Key finding: **Copiers is the most efficient product** (₹2,020/order), Central decline was caused by **one product crashing 79%**, and Phones decline is a **West-only strategy problem** — not a product failure
+> Key findings:
+> - **Copiers is the most efficient product** — ₹2,020 per order, 14x better than Binders
+> - **Central decline was one product crashing 79%** — not a general problem
+> - **Phones decline is West-only** — East grew 69% in same period
+> - **Copiers is Spring-driven** — Fall has 3x untapped potential
 >
-> Fixing these 3 root causes can push growth significantly higher
+> Fixing these 4 root causes can push growth significantly higher
